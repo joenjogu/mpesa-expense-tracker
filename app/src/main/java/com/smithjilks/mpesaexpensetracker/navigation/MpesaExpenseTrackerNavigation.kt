@@ -1,11 +1,13 @@
 package com.smithjilks.mpesaexpensetracker.navigation
 
+import android.content.Intent
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import androidx.navigation.navDeepLink
 import com.smithjilks.mpesaexpensetracker.core.constants.MpesaExpenseTrackerScreens
 import com.smithjilks.mpesaexpensetracker.feature.dashboard.Dashboard
 import com.smithjilks.mpesaexpensetracker.feature.records.RecordDetailsScreen
@@ -15,6 +17,7 @@ import com.smithjilks.mpesaexpensetracker.feature.splashscreen.SplashScreen
 @Composable
 fun MpesaExpenseTrackerNavigation() {
     val navController = rememberNavController()
+    val uri = "app://open.smithjilks.mpesaexpensetracker"
 
     NavHost(
         navController = navController,
@@ -45,7 +48,11 @@ fun MpesaExpenseTrackerNavigation() {
             arguments = listOf(navArgument(name = "recordId") {
                 type = NavType.StringType
                 defaultValue = ""
-            })
+            }),
+            deepLinks = listOf(navDeepLink {
+                action = Intent.ACTION_VIEW
+                uriPattern = "$uri/$recordDetailsRoute?recordId={recordId}" })
+
         ) { backStackEntry ->
             RecordDetailsScreen(
                 navController = navController,

@@ -138,7 +138,7 @@ class CoreUtilsTest {
 
         val createdBuyGoodsRecord = CoreUtils.createRecordFromMpesaMessage(
             "REK61DLFRE Confirmed. Ksh100.00 paid to Naivas Safari Centre Naivasha. on 20/5/23 at 6:39 PM." +
-                    "New M-PESA balance is Ksh100.00. Transaction cost, Ksh0.00. " +
+                    "New M-PESA balance is Ksh70.00. Transaction cost, Ksh0.00. " +
                     "Amount you can transact within the day is 297,728.00. " +
                     "Pay to POCHI LA BIASHARA FREE for amount below Kshs 100."
         )

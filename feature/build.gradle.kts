@@ -76,6 +76,8 @@ dependencies {
     implementation(Libs.AndroidX.Compose.hiltNavigation)
 
     implementation(Libs.Accompanist.systemUiController)
+    implementation(Libs.Accompanist.permissions)
+
 
 
     implementation(project(":core"))

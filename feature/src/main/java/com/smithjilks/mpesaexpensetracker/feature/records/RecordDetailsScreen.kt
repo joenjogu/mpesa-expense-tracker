@@ -1,6 +1,7 @@
 package com.smithjilks.mpesaexpensetracker.feature.records
 
 import android.annotation.SuppressLint
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -62,6 +63,9 @@ fun RecordDetailsScreen(
 
         }
     ) {
+        Log.d("foofo", navController.currentBackStackEntry.toString())
+        Log.d("foofo", navController.currentDestination.toString())
+
         RecordDetailsContent(
             navController = navController,
             recordsViewModel = recordsViewModel,

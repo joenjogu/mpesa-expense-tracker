@@ -36,6 +36,7 @@ object Libs {
 
     object Accompanist{
         const val systemUiController = "com.google.accompanist:accompanist-systemuicontroller:0.28.0"
+        const val permissions =  "com.google.accompanist:accompanist-permissions:0.28.0"
     }
 
     object AndroidX {

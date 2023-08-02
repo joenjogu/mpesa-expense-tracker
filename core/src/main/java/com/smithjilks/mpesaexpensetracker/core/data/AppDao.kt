@@ -63,7 +63,7 @@ interface AppDao {
     ): Flow<List<Record>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertRecord(record: Record)
+    suspend fun insertRecord(record: Record): Long
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertRecords(records: List<Record>)
