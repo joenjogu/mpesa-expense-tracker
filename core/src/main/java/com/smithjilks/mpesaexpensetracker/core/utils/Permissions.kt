@@ -23,6 +23,17 @@ object Permissions {
         }
     }
 
+    fun requestReadSMSPermission(context: Activity) {
+        val permission = Manifest.permission.READ_SMS
+        if (checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(
+                context,
+                arrayOf(permission),
+                REQUEST_CODE_SMS_PERMISSION
+            )
+        }
+    }
+
     fun notificationPermissionGranted(context: Context): Boolean {
         var granted = true
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {

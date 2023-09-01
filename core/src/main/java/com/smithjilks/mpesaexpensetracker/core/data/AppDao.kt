@@ -28,7 +28,7 @@ interface AppDao {
     @Query("SELECT * FROM records_table")
     fun getAllRecords(): Flow<List<Record>>
 
-    @Query("SELECT * FROM records_table ORDER BY id DESC LIMIT 10")
+    @Query("SELECT * FROM records_table ORDER BY timestamp DESC LIMIT 10")
     fun getRecentRecords(): Flow<List<Record>>
 
     @Query("SELECT * FROM records_table WHERE recordType =:recordType")

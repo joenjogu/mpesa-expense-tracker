@@ -67,6 +67,6 @@ class DashboardViewModel @Inject constructor(
     fun insertRecords(records: List<Record>) = effect { repository.insertRecords(records) }
 
     private fun effect(block: suspend () -> Unit) {
-        viewModelScope.launch(ioDispatcher) { block() }    // 4
+        viewModelScope.launch { block() }    // 4
     }
 }

@@ -81,6 +81,8 @@ object CoreUtils {
 
     fun createRecordFromMpesaMessage(message: String): Record? {
 
+        if (!message.contains("confirmed", ignoreCase = true)) return null
+
         val transactionRefRegex = "\\b[A-Z0-9]+\\b".toRegex()
         val amountRegex = "(Ksh)(\\d+,|)\\d+(\\.\\d{2})".toRegex()
         val dateRegex = "\\d+/\\d+/\\d+".toRegex()
